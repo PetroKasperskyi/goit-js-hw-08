@@ -8,8 +8,8 @@ console.log(galleryItems);
 
 
 const listEl = document.querySelector('.gallery');
-const itemsel = createGalleryItems(galleryItems);
-listEl.insertAdjacentHTML('beforeend', itemsel)
+const itemsEl = createGalleryItems(galleryItems);
+listEl.insertAdjacentHTML('beforeend', itemsEl)
 
 function createGalleryItems(items) {
     return items.map(({ preview, original, description }) => {
@@ -20,9 +20,12 @@ function createGalleryItems(items) {
 </li>`;
     }).join("");
 }
+
     let lightbox = new SimpleLightbox(".gallery a", {
         captions: true,
         captionsData: "alt",
         captionsDelay: 250,
         
     })
+
+    listEl.style.listStyle = 'none'
